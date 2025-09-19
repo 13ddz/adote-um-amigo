@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
         form.addEventListener("submit", (e) => {
             e.preventDefault(); // Evita o envio real
 
-            alert("Formulário enviado com sucesso! Obrigado pelo contato 😊");
+            alert("Formulário enviado com sucesso. Obrigado por enviar! 🐾");
 
             form.reset(); // Limpa os campos
         });

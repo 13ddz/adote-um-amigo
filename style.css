@@ -1,13 +1,20 @@
+/* Ajustes gerais de layout */
+html,
 body {
+    height: 100%;
+    padding: 0;
     margin: 0;
     font-family: Arial, sans-serif;
     background: #fff9f0;
     color: #080808;
+    display: flex;
+    flex-direction: column;
 }
 
+/* Estilos para o cabeçalho e navegação */
 header {
-    background: #f0b97b;
-    padding: 15px 0;
+    background: #d69244;
+    padding: 35px 0;
 }
 
 header .container {
@@ -19,6 +26,9 @@ header .container {
 }
 
 header h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: white;
     margin: 0;
 }
 
@@ -29,67 +39,108 @@ nav a {
     font-weight: bold;
 }
 
+/* Estilo do banner */
 .banner {
-    background: url('images/vira-latas.jpg') no-repeat center center;
+    background: url('images/pet.jpg') no-repeat center center;
     background-size: cover;
     padding: 150px 20px 100px 20px;
     text-align: center;
     color: white;
-    height: 600px;
+    height: 100vh;
+}
+
+.banner h2 {
+    font-size: 3rem;
+    font-weight: bold;
 }
 
 .banner .btn {
-    background: #ffcc00;
-    padding: 10px 20px;
-    color: #333;
+    background-color: #218838;
+    padding: 12px 35px;
+    color: white;
     text-decoration: none;
     font-weight: bold;
-    border-radius: 5px;
+    font-size: 1.2rem;
+    border-radius: 50px;
+    transition: all 0.3s ease-in-out;
 }
 
-.animais .cards {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-    padding: 20px;
+.btn:hover {
+    background-color: #2eb94e;
+    transform: scale(1.1);
+    box-shadow: 0 0 15px rgba(40, 167, 69, 0.6);
+    color: #fff;
 }
 
-.card {
-    background: white;
-    border-radius: 10px;
-    width: 250px;
-    box-shadow: 0 0 10px #050505;
-    text-align: center;
-    padding: 15px;
+.btn:active {
+    transform: scale(1);
+    background-color: #218838;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
 }
 
-.card img {
+/* Ajuste para o texto rolante */
+.scroll-text {
+    white-space: nowrap;
+    overflow: hidden;
     width: 100%;
-    border-radius: 10px;
+    box-sizing: border-box;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 15px;
+    text-align: center;
 }
 
-form {
+.scroll-text-wrapper {
     display: flex;
-    flex-direction: column;
-    width: 90%;
-    max-width: 500px;
-    margin: 20px auto;
+    animation: scroll-left 30s linear infinite;
 }
 
-form input,
-form select,
-form textarea,
-form button {
-    margin-bottom: 15px;
-    padding: 10px;
+/* Estilo de cada item de texto rolante */
+.scroll-item {
+    display: inline-block;
+    padding-right: 50px;
+}
+
+/* Animação para rolar o texto */
+@keyframes scroll-left {
+    0% {
+        transform: translateX(100%);
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+/* Estilos de navegação e rodapé */
+footer {
+    background: #d69244;
+    color: white;
+    text-align: center;
+    padding: 30px 0;
     font-size: 1rem;
 }
 
-footer {
-    background: #37c2bb;
-    color: white;
+.scroll-down {
+    display: block;
+    font-size: 24px;
     text-align: center;
-    padding: 20px 0;
-    margin-top: 40px;
+    margin-top: 20px;
+    animation: bounce 2s infinite, colorchange 3s infinite;
+}
+
+@keyframes colorchange {
+    0% {
+        color: #218838;
+    }
+
+    50% {
+        color: #f56c42;
+    }
+
+    100% {
+        color: #218838;
+    }
 }
